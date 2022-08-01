@@ -1,38 +1,122 @@
 .App {
   text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-links {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around; 
+  height: 100px;
+}
+
+header a {
+  height: 20px;
+  width: 150px;
+  padding: 10px;
+  border: solid #4AB1BA 1px;
+  border-radius: 5px;
+  background-color: white;
+  color: #4AB1BA;
+  text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-right: 20px;
+  font-size: 12px;
+}
+
+
+#sellItems {
+  background-color: #4AB1BA;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#search {
+  width: 500px;
+  height: 25px;
+  border-radius: 10px;
+  background: #f1f3f9;
+  border: none;
+  margin-right: 20px;
+  padding: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.offer-section {
+  display: flex;
+  flex-wrap: wrap ;
+  padding: 20px;
+  margin: 20px;
+}
+
+.offer-section img {
+  object-fit: cover;
+  height: 200px;
+  width: 200px;
+}
+
+
+.offer-card {
+ height: 300px;
+ width: 250px;
+ display: flex;
+ padding: 20px;
+ align-items: center;
+ justify-content: center;
+ box-sizing: border-box;
+}
+
+.offer-title {
+  text-decoration: none;
+}
+
+.offer-img {
+  height: 500px;
+  width: 200px;
+  object-fit: cover;
+}
+
+header img {
+  width: 120px;
+  height: 50px;
+  margin: 0 auto;
+  margin-right: 20px;
+}
+
+
+.form-sign {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-sign > h2 {
+  font-size: 24px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+
+.form-sign > input {
+  width: 300px;
+  margin: 10px;
+  border: none;
+  border-bottom: 1px #4AB1BA solid ;
+}
+
+.form-sign > p {
+  font-size: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.submitInput {
+ width:100px;
+ height: 30px;
+ border-radius: 5px;
+ background-color: #4AB1BA;
+ color: white;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
