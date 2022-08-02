@@ -19,8 +19,7 @@ const Header = ({ token, setUser }) => {
         
         </>
       ) : (
-        <button
-          onClick={() => {
+        <button id="logout-btn" onClick={() => {
             setUser(null);
             navigate("/");
           }}

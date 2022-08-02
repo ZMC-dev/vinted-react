@@ -8,10 +8,19 @@ h2 {
   font-size: 24px;
 }
 
+header img {
+  width: 100px;
+  height: 50px;
+  margin: 0 auto;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
 .header-links {
   display: flex;
   justify-content: space-around; 
   height: 100px;
+  margin-top: 15px;
 }
 
 header a {
@@ -30,6 +39,14 @@ header a {
   font-size: 12px;
 }
 
+#logout-btn {
+  width:120px;
+ height: 30px;
+ border-radius: 5px;
+ border: #4AB1BA 1px solid;
+ color: #4AB1BA;
+ padding: 5px;
+}
 
 #sellItems {
   background-color: #4AB1BA;
@@ -46,6 +63,8 @@ header a {
   padding: 10px;
 }
 
+/* info offer dans App.js */
+
 .offer-section {
   display: flex;
   flex-wrap: wrap ;
@@ -55,38 +74,32 @@ header a {
 
 .offer-section img {
   object-fit: cover;
-  height: 200px;
+  height: 300px;
   width: 200px;
 }
-
 
 .offer-card {
- height: 300px;
+ height: 320px;
  width: 250px;
  display: flex;
+ flex-direction: column;
  padding: 20px;
- align-items: center;
- justify-content: center;
  box-sizing: border-box;
+ margin-bottom: 80px;
 }
 
-.offer-title {
-  text-decoration: none;
+.offer-info-under-card {
+  font-size: 12px;
+  color: gray;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  align-content: left;
+  line-height: 2px;
 }
 
-.offer-img {
-  height: 500px;
-  width: 200px;
-  object-fit: cover;
-}
 
-header img {
-  width: 120px;
-  height: 50px;
-  margin: 0 auto;
-  margin-right: 20px;
-}
 
+
+/* formumaire Signup & Login */
 
 .form-sign {
   display: flex;
@@ -120,3 +133,60 @@ header img {
  color: white;
  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.formSeller {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.formSeller > input {
+  width: 500px;
+  margin: 10px;
+  border: none;
+  border-bottom: 1px lightgray solid ;
+}
+
+/* hero image - Home */
+.hero-div{
+  width: 1400px;
+}
+
+#hero-img {
+  display: block;
+  width: 1200px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Offer.js - info des items */ 
+.item-page {
+ display: flex;
+ background-color: lightcyan;
+ justify-content: space-around;
+ padding: 30px;
+}
+
+.item-page-info {
+  background-color: white;
+  width: 350px;
+  height: 460px;
+  border: 1px solid #4AB1BA;
+  padding: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+}
+
+.item-page-img {
+  max-height: 500px;
+  max-width: auto;
+}
+
+#seller-details {
+  font-size: 11px;
+  color: gray;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+

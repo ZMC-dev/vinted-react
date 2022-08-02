@@ -14,23 +14,24 @@ const Signup = ({setUser}) => {
     const navigate = useNavigate();
 
 
-    const handleEmailChange = event => {
+      const handleEmailChange = event => {
       const value = event.target.value;
       setEmail(value);
     };
   
-  const handleNameChange = event => {
+      const handleNameChange = event => {
       const value = event.target.value;
       setName(value);
     };
-    const handlePasswordChange = event => {
+
+      const handlePasswordChange = event => {
       const value = event.target.value;
       setPassword(value);
     };
 
-    const handleNewsletterChange = event => {
-    const value = event.target.checked;
-    setNewsletter(value);
+      const handleNewsletterChange = event => {
+      const value = event.target.checked;
+      setNewsletter(value);
     }
   
     const handleSubmit = async (event) => {
