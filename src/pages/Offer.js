@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+import { Link } from "react-router-dom";
+
+
 const Offer = () => {
   const { offerId } = useParams();
   const [data, setData] = useState();
@@ -33,20 +36,21 @@ const Offer = () => {
     <div className="item-page-info">
         <p> {data.product_price} € </p>
       
-      <div>{data.product_details.map((item) => {
+      <div>{data.product_details.map((item , index) => {
           //   console.log(Object.keys(item));
           const keys = Object.keys(item);
           return (
-            <p>
+            <p key={index}>
               {keys[0]} : {item[keys[0]]}
             </p>
           );
         })}
+        </div>
+      {/* Bouton pour le paiment*/}
+      
       </div>
 
-    </div>
-     
-
+      <Link to="/payment" state={{ title: "toto", price: "12" }}>Acheter</Link>
 
     </div>
   );
