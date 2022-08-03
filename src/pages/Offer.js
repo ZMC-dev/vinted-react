@@ -36,22 +36,21 @@ const Offer = () => {
     <div className="item-page-info">
         <p> {data.product_price} € </p>
       
-      <div>{data.product_details.map((item , index) => {
+      <div>{data.product_details.map((item, index) => {
           //   console.log(Object.keys(item));
           const keys = Object.keys(item);
           return (
             <p key={index}>
+
               {keys[0]} : {item[keys[0]]}
+
             </p>
           );
         })}
         </div>
-      {/* Bouton pour le paiment*/}
-      
-      </div>
-
-      <Link to="/payment" state={{ title: "toto", price: "12" }}>Acheter</Link>
-
+      {/* Bouton pour le paiement*/}
+      <Link to="/payment" state={{ title: data.product_name , price: data.product_price }}>Acheter</Link>
+    </div>
     </div>
   );
 };
