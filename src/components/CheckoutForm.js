@@ -8,19 +8,16 @@ const CheckoutForm = ({title, price}) => {
   const stripe = useStripe();
   const elements = useElements();
 
-  const [completed, setCompleted] = useState(false);
+  const [completed, setCompleted] = useState("");
 
   const handleSubmit = async (event) => {
     try {
     event.preventDefault();
 
-    const cardElement = elements.getElement(CardElement);
-
-    const stripeResponse = await stripe.createToken(cardElement)
-
+    const cardElements = elements.getElement(CardElement);
+    const stripeResponse = await stripe.createToken(cardElements)
     console.log(stripeResponse);
     const stripeToken = stripeResponse.token.id;
-
     const response = await axios.post("https://lereacteur-vinted-api.herokuapp.com/payment", {
       stripeToken,
 
@@ -33,23 +30,20 @@ const CheckoutForm = ({title, price}) => {
     // Si la réponse du serveur est favorable, la transaction a eu lieu
     if (response.data.status === "succeeded") {
       console.log("Payment succeeded!!");
-      setCompleted(true);
+      setCompleted("Valid payment");
     }
   } catch (error) {
   // Si la réponse du serveur est négative, la transaction n'a pas lieu
-    console.error({message : "Payment not succeeded"})
+    console.error({message : "Payment not valid"})
   }
 };
   return (
     <div>
-      {!completed ? (
         <form onSubmit={handleSubmit}>
           <CardElement />
           <button type="submit">Valider</button>
         </form>
-      ) : (
-        <span>Paiement effectué !</span>
-      )}
+      <h1>{completed}</h1>
     </div>
   );
 };
