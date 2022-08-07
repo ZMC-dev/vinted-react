@@ -19,11 +19,11 @@ const CheckoutForm = ({title, price}) => {
     console.log(stripeResponse);
     const stripeToken = stripeResponse.token.id;
     const response = await axios.post("https://lereacteur-vinted-api.herokuapp.com/payment", {
-      stripeToken,
-
+      
+    token: stripeToken,
       //PRIX ET TITRE DE L'ITEM
-      title: title,
-      amount: price * 100,
+    title: title,
+    amount: price * 100,
       
     });
     console.log(response.data);
@@ -38,7 +38,7 @@ const CheckoutForm = ({title, price}) => {
   }
 };
   return (
-    <div>
+    <div className="form-payment">
         <form onSubmit={handleSubmit}>
           <CardElement />
           <button type="submit">Valider</button>

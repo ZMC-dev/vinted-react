@@ -36,6 +36,11 @@ const Home = () => {
 
       <section className="offer-section">
         {data.offers.map((offer) => {
+  
+        console.log("username =>  " + offer.owner.account.username)
+        console.log("marque =>" + offer.product_details[0].MARQUE)
+        console.log("taille =>" + offer.product_details[1].TAILLE)
+
         return (
           <div className="offer-card">
 

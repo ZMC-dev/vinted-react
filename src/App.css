@@ -154,16 +154,15 @@ header a {
 }
 
 #hero-img {
-  display: block;
-  width: 1200px;
-  height: auto;
+  width: 100%;
+  height: 50vh;
   object-fit: cover;
 }
 
 /* Offer.js - info des items */ 
 .item-page {
  display: flex;
- background-color: lightcyan;
+ background-color: #f1f3f9;
  justify-content: space-around;
  padding: 30px;
 }
@@ -172,10 +171,23 @@ header a {
   background-color: white;
   width: 350px;
   height: 460px;
-  border: 1px solid #4AB1BA;
   padding: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 12px;
+}
+
+.btn-acheter{
+  background-color: #4AB1BA;
+  border-radius: 5px;
+  font-size: 12px;
+  width: 120px;
+  margin-top: 100px;
+  margin-left: 80px;
+}
+
+.btn-acheter a {
+  text-decoration: none;
+  color: white;
 }
 
 .item-page-img {
@@ -189,4 +201,17 @@ header a {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.payment-div {
+  width: 400px;
+  border-radius: 20px;
+  border: lightgray solid 2px;
+  padding: 20px;
+  margin: 30px;
+  box-shadow: 3px;
+}
+
+.payment-div p{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
 

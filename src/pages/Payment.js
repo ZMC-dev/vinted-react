@@ -14,9 +14,9 @@ const { title , price } = location.state;
 
   return (
 
-    <div>
-      <h3>{title}</h3>
-      <h3>{price}</h3>
+    <div className="payment-div">
+      <p>{title}</p>
+      <p>{price} €</p>
       <Elements stripe={stripePromise} >
       <CheckoutForm  title={title} price={price}/>
       </Elements>
