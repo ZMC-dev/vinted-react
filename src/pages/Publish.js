@@ -95,7 +95,6 @@ const Publish = ({token}) => {
     alert(JSON.stringify(response.data));
     
     console.log(response.data);
-
     if (response.data._id) {
       //Je vais déclencher une redirection vers la page de l'offre que je viens de créer
       navigate(`/offer/${response.data._id}`);

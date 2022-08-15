@@ -5,27 +5,28 @@ import hero from "../assets/img/hero.jpg";
 
 import { Link } from "react-router-dom";
 
-//https://lereacteur-vinted-api.herokuapp.com/offers
 
-const Home = () => {
+const Home = ({search}) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+
 
   useEffect(() => {
     try {
       const fetchOffers = async () => {
+
         const response = await axios.get(
-          "https://lereacteur-vinted-api.herokuapp.com/offers"
-        );
-        // console.log(response.data);
+          `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}`);
+
         setData(response.data);
+
         setIsLoading(false);
       };
       fetchOffers();
     } catch (error) {
       console.log(error.message);
     }
-  }, []);
+  }, [search]);
   return isLoading === true ? (
     <div>En cours de chargement</div>
   ) : (
@@ -37,9 +38,9 @@ const Home = () => {
       <section className="offer-section">
         {data.offers.map((offer) => {
   
-        console.log("username =>  " + offer.owner.account.username)
-        console.log("marque =>" + offer.product_details[0].MARQUE)
-        console.log("taille =>" + offer.product_details[1].TAILLE)
+        console.log(offer.owner.account.username)
+        console.log(offer.product_details[0].MARQUE)
+        console.log(offer.product_details[1].TAILLE)
 
         return (
           <div className="offer-card">

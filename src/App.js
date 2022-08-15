@@ -23,6 +23,7 @@ import Payment from "./pages/Payment";
 function App() {
 
   const [token, setToken] = useState(Cookies.get("userToken") || null);
+  const [search, setSearch] = useState("");
 
   const setUser = (tokenToCheck) => {
     if (tokenToCheck !== null) {
@@ -41,13 +42,13 @@ function App() {
     <div className="container">
      
       <Router>
-      <Header token={token} setUser={setUser}/>
+      <Header token={token} setUser={setUser} setSearch={setSearch}/>
         <Routes>
           <Route path="/signup" element={<Signup setUser={setUser}/>} />
           <Route path="/login" element={<Login setUser={setUser}/>} />
           <Route path="/publish" element={<Publish token={token}/>} />
           <Route path="/offer/:offerId" element={<Offer />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home search={search} />} />
 
           <Route path="/payment" element= {<Payment />}/>
           

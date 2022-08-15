@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -33,28 +32,34 @@ const Offer = () => {
       </img>
     </div>
 
-    <div className="item-page-info">
-        <p> {data.product_price} € </p>
-      
-      <div>{data.product_details.map((item, index) => {
+    <div>
+        
+      <div className="item-page-info">
+      <p> {data.product_price} € </p>
+
+        {data.product_details.map((item, index) => {
           //   console.log(Object.keys(item));
           const keys = Object.keys(item);
           return (
-            <p key={index}>
-
+            <div className="item-info-up">
+              <p key={index}>
               {keys[0]} : {item[keys[0]]}
-
-            </p>
+              </p>
+            </div>
+          
           );
         })}
-        </div>
-      {/* Bouton pour le paiement*/}
-      <div >
-        <button className="btn-acheter">
+        <div className="item-info-down">
+              <p>{data.product_name} </p>
+              <p>{data.product_description}</p>
+
+              <button className="btn-acheter">
+            {/* Bouton pour le paiement*/}
           <Link to="/payment" state={{ title: data.product_name , price: data.product_price }}>Acheter</Link>
-        </button>
-        
+        </button> 
+        </div>
       </div>
+        
       
     </div>
   </div>

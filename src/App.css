@@ -53,7 +53,7 @@ header a {
   color: white;
 }
 
-#search {
+.search-bar {
   width: 500px;
   height: 25px;
   border-radius: 10px;
@@ -180,9 +180,10 @@ header a {
   background-color: #4AB1BA;
   border-radius: 5px;
   font-size: 12px;
-  width: 120px;
+  width: 100%;
+  height: 25px;
+  justify-self: center;
   margin-top: 100px;
-  margin-left: 80px;
 }
 
 .btn-acheter a {
