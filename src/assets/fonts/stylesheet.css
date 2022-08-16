@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'MaisonNeueBook';
+    src: url('./MaisonNeueBook.eot');
+    src: url('./MaisonNeueBook.eot') format('embedded-opentype'),
+        url('./MaisonNeueBook.woff2') format('woff2'),
+        url('./MaisonNeueBook.woff') format('woff'),
+        url('./MaisonNeueBook.ttf') format('truetype'),
+        url('./MaisonNeueBook.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MaisonNeueMedium';
+    src: url('./MaisonNeueMedium.eot');
+    src: url('./MaisonNeueMedium.eot') format('embedded-opentype'),
+        url('./MaisonNeueBook.woff2') format('woff2'),
+        url('./MaisonNeueMedium.woff') format('woff'),
+        url('./MaisonNeueMedium.ttf') format('truetype'),
+        url('./MaisonNeueMedium.svg') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+

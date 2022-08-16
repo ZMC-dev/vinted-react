@@ -1,10 +1,12 @@
+@import './assets/fonts/stylesheet.css';
+
 .App {
   text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'MaisonNeueBook', serif ;
 }
 
 h2 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'MaisonNeueMedium';
   font-size: 24px;
 }
 
@@ -174,16 +176,24 @@ header a {
   padding: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-info-up {
+  border-bottom: 1px solid lightgrey;
 }
 
 .btn-acheter{
   background-color: #4AB1BA;
   border-radius: 5px;
-  font-size: 12px;
-  width: 100%;
-  height: 25px;
+  font-size: 16px;
+  width: 85%;
+  height: 40px;
   justify-self: center;
-  margin-top: 100px;
+  padding: 10px; 
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .btn-acheter a {
