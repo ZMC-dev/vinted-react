@@ -4,11 +4,13 @@ import logo from "../assets/img//vinted_logo.png";
 
 
 
-const Header = ({ token, setUser, setSearch }) => {
+const Header = ({ token, setUser, setSearch, setCheck, check}) => {
   const navigate = useNavigate();
 
-  //à mettre sur onChange de la search
+  //changements de la search bar
   const onChange = event => {setSearch(event.target.value)}
+    //changements de la check box
+  const OnCheck = event => {setCheck(event.target.checked)};
 
   return (
     <header className="header-links">
@@ -26,6 +28,7 @@ const Header = ({ token, setUser, setSearch }) => {
       placeholder="search.......something"
       onChange={onChange}/>
     </div>  
+
         
           <Link to="/signup">S'inscrire</Link>
           <Link to="/login">Se connecter</Link>{" "} 
@@ -41,6 +44,15 @@ const Header = ({ token, setUser, setSearch }) => {
           Se déconnecter
         </button>
       )}
+
+
+    <div>
+      <label htmlFor="check-sort">Trier par prix :</label>
+      <input  
+      type="checkbox" 
+      className="checkbox-sort" 
+      onChange={OnCheck}/>
+    </div>
 
     </header>
   );

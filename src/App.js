@@ -24,6 +24,7 @@ function App() {
 
   const [token, setToken] = useState(Cookies.get("userToken") || null);
   const [search, setSearch] = useState("");
+  const [check, setCheck] = useState(false);
 
   const setUser = (tokenToCheck) => {
     if (tokenToCheck !== null) {
@@ -42,13 +43,13 @@ function App() {
     <div className="container">
      
       <Router>
-      <Header token={token} setUser={setUser} setSearch={setSearch}/>
+      <Header token={token} setUser={setUser} setSearch={setSearch} setCheck={setCheck}/>
         <Routes>
           <Route path="/signup" element={<Signup setUser={setUser}/>} />
           <Route path="/login" element={<Login setUser={setUser}/>} />
           <Route path="/publish" element={<Publish token={token}/>} />
           <Route path="/offer/:offerId" element={<Offer />} />
-          <Route path="/" element={<Home search={search} />} />
+          <Route path="/" element={<Home search={search} check={check} />} />
 
           <Route path="/payment" element= {<Payment />}/>
           

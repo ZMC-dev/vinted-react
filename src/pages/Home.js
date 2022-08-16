@@ -6,7 +6,7 @@ import hero from "../assets/img/hero.jpg";
 import { Link } from "react-router-dom";
 
 
-const Home = ({search}) => {
+const Home = ({search, check}) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -16,7 +16,7 @@ const Home = ({search}) => {
       const fetchOffers = async () => {
 
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}`);
+          `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}&sort=${check ? "price-desc":"price-asc"}`);
 
         setData(response.data);
 
@@ -26,7 +26,7 @@ const Home = ({search}) => {
     } catch (error) {
       console.log(error.message);
     }
-  }, [search]);
+  }, [search, check]);
   return isLoading === true ? (
     <div>En cours de chargement</div>
   ) : (
